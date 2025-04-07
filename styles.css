@@ -45,7 +45,7 @@ header {
   margin-top: 220px;
   font-family: 'Poppins', sans-serif;
   color: #730073;
-  text-align: left;
+  text-align: center;
   font-size: 1.5rem;
   max-width: 90%;
   line-height: 1.6;
@@ -55,8 +55,39 @@ header {
   font-weight: bold;
 }
 
+/* Imagen base */
 .header-image {
-  max-width: 100%;
+  width: 100%;
+  max-width: 1000px;
   height: auto;
-  object-fit: contain;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+
+  /* Animación de entrada */
+  animation: fadeInUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Hover que sí funciona */
+.header-image:hover {
+  transform: scale(1.08);
+}
+
+/* Más grande en pantallas grandes */
+@media (min-width: 1200px) {
+  .header-image {
+    max-width: 1200px;
+  }
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
