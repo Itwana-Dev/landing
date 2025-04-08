@@ -92,8 +92,7 @@ header {
 .countdown-section {
   text-align: center;
   margin: 60px auto;
-  /* Si deseas separar visualmente el contador, puedes agregar padding-top o border-top */
-  padding-top: 40px;
+  padding-top: 40px; /* Separación del contenido del header */
 }
 
 .countdown-title {
@@ -134,4 +133,77 @@ header {
 
 .bounce {
   animation: bounceIn 0.4s;
+}
+
+/***********************************************
+ * Sección Empoder-Arte: Imagen a la izquierda e info a la derecha
+ * Fondo reemplazado por la imagen empoderarte_background.png
+ ***********************************************/
+ .empoderarte-section {
+  /* Se utiliza la imagen de fondo en lugar del color sólido */
+  background: url('assets/empoderarte_background.png') no-repeat center center;
+  background-size: cover;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empoderarte-card {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  overflow: hidden; /* Para que la imagen se recorte suavemente si es necesario */
+}
+
+/* Columna de imagen */
+.card-image {
+  flex: 1 1 50%;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se recorte sin distorsionarse */
+}
+
+/* Columna de información */
+.card-info {
+  flex: 1 1 50%;
+  padding: 40px;
+  box-sizing: border-box;
+  color: #730073; /* Texto blanco para buen contraste sobre el fondo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.card-info h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.card-info p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .empoderarte-card {
+    flex-direction: column; /* Imagen arriba, info abajo */
+  }
+  
+  .card-image,
+  .card-info {
+    flex: 1 1 100%;
+  }
+  
+  .card-image img {
+    height: auto;
+  }
 }
