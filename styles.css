@@ -62,25 +62,21 @@ header {
   height: auto;
   transition: transform 0.5s ease;
   cursor: pointer;
-
-  /* Animación de entrada */
   animation: fadeInUp 1.2s ease-out forwards;
   opacity: 0;
 }
 
-/* Hover que sí funciona */
 .header-image:hover {
   transform: scale(1.08);
 }
 
-/* Más grande en pantallas grandes */
 @media (min-width: 1200px) {
   .header-image {
     max-width: 1200px;
   }
 }
 
-/* Animación de entrada */
+/* Animación de entrada para la imagen */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -90,4 +86,52 @@ header {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Contador */
+.countdown-section {
+  text-align: center;
+  margin: 60px auto;
+  /* Si deseas separar visualmente el contador, puedes agregar padding-top o border-top */
+  padding-top: 40px;
+}
+
+.countdown-title {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #730073;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.count-box {
+  background-color: #730073;
+  color: white;
+  padding: 20px 30px;
+  font-size: 2rem;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  min-width: 80px;
+  transition: transform 0.3s ease;
+}
+
+/* Animación de rebote al cambiar el número */
+@keyframes bounceIn {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  50% { transform: scale(0.95); }
+  75% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.bounce {
+  animation: bounceIn 0.4s;
 }
