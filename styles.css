@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@ body {
   font-family: 'Avant Garde', sans-serif;
 }
 
+/* Header */
 header {
   display: flex;
   flex-direction: row;
@@ -55,12 +57,12 @@ header {
   font-weight: bold;
 }
 
-/* Imagen base */
+/* Imagen del Header */
 .header-image {
   width: 100%;
   max-width: 1000px;
   height: auto;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.5s ease;
   cursor: pointer;
   animation: fadeInUp 1.2s ease-out forwards;
   opacity: 0;
@@ -76,7 +78,7 @@ header {
   }
 }
 
-/* Animación de entrada para la imagen */
+/* Animación de Entrada para la Imagen */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -92,7 +94,7 @@ header {
 .countdown-section {
   text-align: center;
   margin: 60px auto;
-  padding-top: 40px; /* Separación del contenido del header */
+  padding-top: 40px;
 }
 
 .countdown-title {
@@ -122,7 +124,6 @@ header {
   transition: transform 0.3s ease;
 }
 
-/* Animación de rebote al cambiar el número */
 @keyframes bounceIn {
   0% { transform: scale(1); }
   25% { transform: scale(1.15); }
@@ -136,11 +137,9 @@ header {
 }
 
 /***********************************************
- * Sección Empoder-Arte: Imagen a la izquierda e info a la derecha
- * Fondo reemplazado por la imagen empoderarte_background.png
+ * Sección Empoder-Arte
  ***********************************************/
- .empoderarte-section {
-  /* Se utiliza la imagen de fondo en lugar del color sólido */
+.empoderarte-section {
   background: url('assets/empoderarte_background.png') no-repeat center center;
   background-size: cover;
   padding: 60px 20px;
@@ -153,10 +152,9 @@ header {
   display: flex;
   max-width: 1200px;
   width: 100%;
-  overflow: hidden; /* Para que la imagen se recorte suavemente si es necesario */
+  overflow: hidden;
 }
 
-/* Columna de imagen */
 .card-image {
   flex: 1 1 50%;
 }
@@ -164,15 +162,19 @@ header {
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen se recorte sin distorsionarse */
+  object-fit: cover;
+  transition: filter 0.5s ease;
 }
 
-/* Columna de información */
+.card-image img:hover {
+  /* Sin efecto adicional */
+}
+
 .card-info {
   flex: 1 1 50%;
   padding: 40px;
   box-sizing: border-box;
-  color: #730073; /* Texto blanco para buen contraste sobre el fondo */
+  color: #730073;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,10 +194,9 @@ header {
   margin-bottom: 15px;
 }
 
-/* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
   .empoderarte-card {
-    flex-direction: column; /* Imagen arriba, info abajo */
+    flex-direction: column;
   }
   
   .card-image,
@@ -205,5 +206,187 @@ header {
   
   .card-image img {
     height: auto;
+  }
+}
+
+/******************************************************
+ * Sección Mentores
+ ******************************************************/
+.mentores-section {
+  background-color: #FFF6E8;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.mentores-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mentores-container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #730073;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+/* Contenedor general de mentores */
+.mentor-rows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;  /* Asegura que cada tarjeta use su altura natural */
+}
+
+/* Cada mentor se organiza en un bloque con dos partes: la card y la descripción */
+.mentor-block {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: calc(33.33% - 40px);
+  min-width: 280px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+
+.mentor-block:hover {
+  transform: translateY(-5px);
+}
+
+/* La card para nombre e imagen */
+.mentor-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.mentor-card h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #730073;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.mentor-subtitle {
+  color: #730073; /* Cambia el valor hexadecimal por el color que prefieras */
+}
+/* Contenedor de imagen y overlay */
+.mentor-image-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.mentor-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.mentor-image-container:hover .mentor-image {
+  filter: grayscale(0%);
+}
+
+.mentor-social-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 25%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mentor-image-container:hover .mentor-social-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.social-icon {
+  background: #730073;
+  color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/* Bloque de descripción fuera de la card */
+.mentor-description-block {
+  background-color: #f7f7f7;
+  padding: 20px;
+  text-align: left;
+  height: auto;
+}
+
+/* Estilo para el snippet */
+.mentor-snippet {
+  font-family: 'Poppins', sans-serif;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+/* Ocultar el snippet al expandir la tarjeta */
+.mentor-description-block.expanded .mentor-snippet {
+  display: none;
+}
+
+/* Ocultar el texto completo por defecto con transición */
+.mentor-full-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+/* Cuando la descripción se expande */
+.mentor-description-block.expanded .mentor-full-description {
+  max-height: 500px; /* Ajusta este valor según el contenido */
+}
+
+/* Enlaces "Leer más" / "Leer menos" */
+.read-more-btn,
+.read-less-btn {
+  display: inline-block;
+  margin-top: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #730073;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-right: 10px;
+}
+
+/* Responsividad Mentores */
+@media (max-width: 768px) {
+  .mentor-rows {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mentor-block {
+    width: 100%;
+    max-width: 600px;
   }
 }

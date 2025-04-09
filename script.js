@@ -15,9 +15,9 @@ function updateCountdown() {
   const now = new Date();
   const diff = eventDate - now;
 
-  // Si ya pasó el evento, muestra un mensaje alternativo.
   if (diff <= 0) {
-    document.querySelector('.countdown').innerHTML = "<div class='count-box'>¡Es hoy!</div>";
+    document.querySelector('.countdown').innerHTML =
+      "<div class='count-box'>¡Es hoy!</div>";
     return;
   }
 
@@ -32,6 +32,38 @@ function updateCountdown() {
   animateChange("seconds", seconds);
 }
 
-// Iniciar la cuenta regresiva cada segundo
 setInterval(updateCountdown, 1000);
-updateCountdown(); // Primera actualización inmediata
+updateCountdown();
+
+// Funcionalidad "Leer más" / "Leer menos" para expandir el texto de cada mentor individualmente
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreButtons = document.querySelectorAll(".read-more-btn");
+  const readLessButtons = document.querySelectorAll(".read-less-btn");
+
+  // Expande el contenido de cada tarjeta de mentor de forma independiente
+  readMoreButtons.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const descriptionBlock = btn.closest(".mentor-description-block");
+      // Se añade la clase que, mediante CSS, expandirá el bloque y ocultará el snippet
+      descriptionBlock.classList.add("expanded");
+      // Se oculta el botón "Leer más"
+      btn.style.display = "none";
+    });
+  });
+
+  // Contrae el contenido de la misma tarjeta
+  readLessButtons.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const descriptionBlock = btn.closest(".mentor-description-block");
+      // Se remueve la clase para colapsar el bloque y mostrar el snippet nuevamente
+      descriptionBlock.classList.remove("expanded");
+      // Se muestra nuevamente el botón "Leer más"
+      const readMore = descriptionBlock.querySelector(".read-more-btn");
+      if (readMore) {
+        readMore.style.display = "inline-block";
+      }
+    });
+  });
+});

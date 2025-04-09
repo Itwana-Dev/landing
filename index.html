@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Landing Creative Vintage</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Carga de fuentes de Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Avant+Garde&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- Carga de Font Awesome para los íconos sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -19,7 +22,7 @@
       <p class="intro-text">
         Descubre el poder de tu transformación y liderazgo a través de experiencias inspiradoras y herramientas clave.
         Únete este <strong>24 de mayo</strong> y da el primer paso hacia la vida que mereces.
-        ¡Regístrate ahora y transforma tu futuro!.
+        ¡Regístrate ahora y transforma tu futuro!
       </p>
     </div>
 
@@ -44,13 +47,11 @@
     </div>
   </header>
 
-  <!-- Sección Empoder-Arte: Imagen a la izquierda, información a la derecha,
-       con fondo reemplazado por la imagen "empoderarte_background.png" -->
+  <!-- Sección Empoder-Arte -->
   <section class="empoderarte-section">
     <div class="empoderarte-card">
       <!-- Columna izquierda: Imagen -->
       <div class="card-image">
-        <!-- Cambia la ruta de la imagen según corresponda -->
         <img src="assets/empoderarte_image.png" alt="Imagen Empoder-Arte">
       </div>
       
@@ -70,6 +71,120 @@
           Este es el momento de tomar las riendas de tu vida, convertir tu historia 
           en un testimonio de valentía y evolución. El empoderamiento es un arte, y tú eres la artista de tu destino.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Mentores: Conoce nuestros mentores -->
+  <section class="mentores-section">
+    <div class="mentores-container">
+      <h2>Conoce nuestros mentores</h2>
+      <div class="mentor-rows">
+
+        <!-- Mentor 1 -->
+        <div class="mentor-block">
+          <!-- Card: Nombre e imagen -->
+          <div class="mentor-card">
+            <h3>Maria Paula Duque</h3>
+            <div class="mentor-image-container">
+              <img src="assets/mentor1.png" alt="Maria Paula Duque" class="mentor-image" />
+              <div class="mentor-social-overlay">
+                <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque de descripción fuera de la card -->
+          <div class="mentor-description-block">
+            <h4 class="mentor-subtitle">Maleta de herramientas para la mujer moderna</h4>
+
+            <!-- Texto corto (snippet) visible por defecto -->
+            <p class="mentor-snippet">
+              Líder de sostenibilidad de Microsoft para América Latina, con una exitosa carrera en telecomunicaciones y tecnología...
+            </p>
+            <!-- Botón "Leer más" -->
+            <a href="#" class="read-more-btn">Leer más</a>
+
+            <!-- Texto completo, inicialmente oculto (se controla con CSS) -->
+            <div class="mentor-full-description">
+              <p>
+                Líder de sostenibilidad de Microsoft para América Latina. Con una exitosa carrera en telecomunicaciones 
+                y tecnología, ha ocupado cargos a nivel directivo en empresas como ETB, Telecom, EPMBogotá, Avianca y FTI. 
+                Fue Viceministra de Comunicaciones de Colombia. Con amplia experiencia en regulación, transformación digital y tecnología, 
+                ha sido miembro independiente de diversas Juntas Directivas y fundadora de Mujeres Tic. 
+                Es reconocida por impulsar el liderazgo femenino y el gobierno corporativo.
+              </p>
+              <!-- Botón "Leer menos" -->
+              <a href="#" class="read-less-btn">Leer menos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mentor 2 -->
+        <div class="mentor-block">
+          <div class="mentor-card">
+            <h3>William Sanchez</h3>
+            <div class="mentor-image-container">
+              <img src="assets/mentor2.png" alt="William Sanchez" class="mentor-image" />
+              <div class="mentor-social-overlay">
+                <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="mentor-description-block">
+            <h4 class="mentor-subtitle">Cuando el Amor toma la forma de MUJER</h4>
+            <p class="mentor-snippet">
+              Comunicador Social-Periodista, escritor y conferencista internacional; creador de la tecnología "BeWell"...
+            </p>
+            <a href="#" class="read-more-btn">Leer más</a>
+            <div class="mentor-full-description">
+              <p>
+                Conferencista internacional en Programas de Alto Impacto en desarrollo de habilidades 
+                para el bien ser y el bienestar humano. Creador de “BeWell”, una tecnología de autoconocimiento 
+                y transformación que ha formado a múltiples mentores y líderes en Latinoamérica. 
+                William eligió honrar lo sagrado femenino como expresión de su Amor Propio y conexión con la Divinidad.
+              </p>
+              <a href="#" class="read-less-btn">Leer menos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mentor 3 -->
+        <div class="mentor-block">
+          <div class="mentor-card">
+            <h3>Ana Cristina Tobón</h3>
+            <div class="mentor-image-container">
+              <img src="assets/mentor3.png" alt="Ana Cristina Tobón" class="mentor-image" />
+              <div class="mentor-social-overlay">
+                <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="mentor-description-block">
+            <h4 class="mentor-subtitle">Autoestima, Motor de mi comportamiento</h4>
+            <p class="mentor-snippet">
+              Ana Cristina es comunicadora social y periodista, magister en matrimonio y familia...
+            </p>
+            <a href="#" class="read-more-btn">Leer más</a>
+            <div class="mentor-full-description">
+              <p>
+                Ana Cristina acompaña a jóvenes y familias a través de conferencias sobre afectividad y sexualidad
+                con el programa Proteger tu Corazón, líder en América Latina. 
+                Es cofundadora de Somos Permanente, donde ofrece productos y experiencias de oración. 
+                Comparte su fe en @mydailydate, recordando que la relación con Dios es parte de la vida cotidiana.
+                Actualmente comprometida en su vocación matrimonial, sus mayores pasiones son hablar del amor de Dios y del amor humano.
+              </p>
+              <a href="#" class="read-less-btn">Leer menos</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
