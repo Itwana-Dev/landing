@@ -390,3 +390,100 @@ header {
     max-width: 600px;
   }
 }
+/* Sección Inscripción */
+.inscripcion-section {
+  background-color: #FFF6E8;  /* O cualquier color de fondo que prefieras */
+  padding: 60px 20px;
+}
+
+.inscripcion-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Parte Izquierda: Imagen y texto */
+.inscripcion-info {
+  flex: 1 1 50%;
+  text-align: left;
+}
+
+.inscripcion-info img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.inscripcion-info p {
+  font-family: 'Poppins', sans-serif;
+  color: #730073;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Parte Derecha: Formulario */
+.inscripcion-formulario {
+  flex: 1 1 40%;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.inscripcion-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inscripcion-formulario form h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #730073;
+  margin: 0 0 10px;
+}
+
+/* Estilos para los campos del formulario */
+.inscripcion-formulario form input[type="text"],
+.inscripcion-formulario form input[type="email"],
+.inscripcion-formulario form input[type="tel"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+/* Botón del formulario */
+.inscripcion-formulario form button {
+  background-color: #730073;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inscripcion-formulario form button:hover {
+  background-color: #590059;
+}
+
+/* Responsividad: en pantallas pequeñas se ordenan en columna */
+@media (max-width: 768px) {
+  .inscripcion-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .inscripcion-info,
+  .inscripcion-formulario {
+    flex: 1 1 100%;
+  }
+}
