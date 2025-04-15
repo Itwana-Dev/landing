@@ -1,4 +1,4 @@
-/* Global Styles */
+/* ========== Global Styles ========== */
 body {
   margin: 0;
   padding: 0;
@@ -7,120 +7,125 @@ body {
   font-family: 'Avant Garde', sans-serif;
 }
 
-/* Header */
+/* ============================= */
+/* HEADER */
+/* ============================= */
 header {
+  background-color: #FFE9D8; /* Fondo pastel */
+  padding: 40px 20px;
+}
+
+/* Contenedor superior: dos columnas */
+.top-section {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 40px;
-  min-height: 100vh;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-}
-
-.left-section {
-  width: 50%;
-  position: relative;
-  padding-right: 20px;
-  box-sizing: border-box;
-}
-
-.right-section {
-  width: 50%;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Lado Izquierdo */
+.left-section {
+  flex: 1;
+  padding-right: 20px;
 }
 
 .logo-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: left;
 }
 
 .logo {
-  width: 200px;
+  width: 150px;
   height: auto;
 }
 
 .intro-text {
-  margin-top: 220px;
   font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
   color: #730073;
-  text-align: center;
-  font-size: 1.5rem;
+  margin-bottom: 20px;
   max-width: 90%;
-  line-height: 1.6;
 }
 
-.intro-text strong {
-  font-weight: bold;
+.event-date {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #730073;
+  margin-bottom: 20px;
 }
 
-/* Imagen del Header */
+.btn-main-cta {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  background-color: #730073;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-main-cta:hover {
+  background-color: #590059;
+}
+
+/* Lado Derecho */
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header-image {
-  width: 100%;
-  max-width: 1000px;
+  width: 130%;
+    
   height: auto;
-  transition: transform 0.5s ease, filter 0.5s ease;
+  transition: transform 0.5s ease;
   cursor: pointer;
-  animation: fadeInUp 1.2s ease-out forwards;
-  opacity: 0;
 }
 
 .header-image:hover {
-  transform: scale(1.08);
-}
-
-@media (min-width: 1200px) {
-  .header-image {
-    max-width: 1200px;
-  }
-}
-
-/* Animación de Entrada para la Imagen */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: scale(1.05);
 }
 
 /* Contador */
 .countdown-section {
+  max-width: 600px;
+  margin: 40px auto 0;
   text-align: center;
-  margin: 60px auto;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .countdown-title {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   font-family: 'Poppins', sans-serif;
   color: #730073;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .countdown {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .count-box {
   background-color: #730073;
-  color: white;
-  padding: 20px 30px;
-  font-size: 2rem;
-  border-radius: 12px;
+  color: #fff;
+  padding: 15px 25px;
+  font-size: 1.5rem;
+  border-radius: 10px;
   font-family: 'Poppins', sans-serif;
-  min-width: 80px;
+  min-width: 60px;
   transition: transform 0.3s ease;
 }
 
@@ -134,6 +139,29 @@ header {
 
 .bounce {
   animation: bounceIn 0.4s;
+}
+
+/* ============================= */
+/* Responsividad */
+/* ============================= */
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .left-section,
+  .right-section {
+    flex: 1 1 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+  .intro-text {
+    max-width: 100%;
+  }
+  .countdown-section {
+    margin-top: 20px;
+  }
 }
 
 /***********************************************
@@ -237,7 +265,7 @@ header {
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
-  align-items: flex-start;  /* Asegura que cada tarjeta use su altura natural */
+  align-items: flex-start;
 }
 
 /* Cada mentor se organiza en un bloque con dos partes: la card y la descripción */
@@ -271,9 +299,11 @@ header {
   font-size: 1.3rem;
   margin-bottom: 15px;
 }
+
 .mentor-subtitle {
-  color: #730073; /* Cambia el valor hexadecimal por el color que prefieras */
+  color: #730073;
 }
+
 /* Contenedor de imagen y overlay */
 .mentor-image-container {
   position: relative;
@@ -346,21 +376,18 @@ header {
   margin-bottom: 10px;
 }
 
-/* Ocultar el snippet al expandir la tarjeta */
 .mentor-description-block.expanded .mentor-snippet {
   display: none;
 }
 
-/* Ocultar el texto completo por defecto con transición */
 .mentor-full-description {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
 }
 
-/* Cuando la descripción se expande */
 .mentor-description-block.expanded .mentor-full-description {
-  max-height: 500px; /* Ajusta este valor según el contenido */
+  max-height: 500px;
 }
 
 /* Enlaces "Leer más" / "Leer menos" */
@@ -390,9 +417,10 @@ header {
     max-width: 600px;
   }
 }
+
 /* Sección Inscripción */
 .inscripcion-section {
-  background-color: #FFF6E8;  /* O cualquier color de fondo que prefieras */
+  background-color: #FFF6E8;
   padding: 60px 20px;
 }
 
@@ -406,7 +434,6 @@ header {
   gap: 40px;
 }
 
-/* Parte Izquierda: Imagen y texto */
 .inscripcion-info {
   flex: 1 1 50%;
   text-align: left;
@@ -426,7 +453,6 @@ header {
   line-height: 1.6;
 }
 
-/* Parte Derecha: Formulario */
 .inscripcion-formulario {
   flex: 1 1 40%;
   background: #fff;
@@ -447,7 +473,6 @@ header {
   margin: 0 0 10px;
 }
 
-/* Estilos para los campos del formulario */
 .inscripcion-formulario form input[type="text"],
 .inscripcion-formulario form input[type="email"],
 .inscripcion-formulario form input[type="tel"] {
@@ -458,7 +483,6 @@ header {
   font-size: 1rem;
 }
 
-/* Botón del formulario */
 .inscripcion-formulario form button {
   background-color: #730073;
   color: #fff;
@@ -475,7 +499,6 @@ header {
   background-color: #590059;
 }
 
-/* Responsividad: en pantallas pequeñas se ordenan en columna */
 @media (max-width: 768px) {
   .inscripcion-container {
     flex-direction: column;
@@ -485,5 +508,87 @@ header {
   .inscripcion-info,
   .inscripcion-formulario {
     flex: 1 1 100%;
+  }
+}
+
+/* Sección Pago */
+.pago-section {
+  background-color: #FFF6E8;
+  padding: 60px 20px;
+}
+
+.pago-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pago-texto-grande {
+  flex: 0 0 70%;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  color: #730073;
+}
+
+.pago-texto-grande h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.pago-texto-grande p {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.pago-boton-grande {
+  flex: 0 0 30%;
+  text-align: right;
+}
+
+.boton-pagar-grande {
+  background-color: #730073;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  padding: 20px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.boton-pagar-grande:hover {
+  background-color: #590059;
+}
+
+@media (max-width: 768px) {
+  .pago-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .pago-texto-grande, 
+  .pago-boton-grande {
+    flex: 1 1 100%;
+  }
+  
+  .pago-texto-grande h1 {
+    font-size: 2.5rem;
+  }
+  
+  .pago-texto-grande p {
+    font-size: 1.5rem;
+  }
+  
+  .pago-boton-grande {
+    margin-top: 20px;
+  }
+  
+  .boton-pagar-grande {
+    font-size: 1.8rem;
+    padding: 15px 30px;
   }
 }

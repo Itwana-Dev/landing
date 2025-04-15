@@ -5,32 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Landing Creative Vintage</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Carga de fuentes de Google -->
+  <!-- Fuentes de Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Avant+Garde&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <!-- Carga de Font Awesome para los íconos sociales -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
   <header>
-    <div class="left-section">
-      <div class="logo-container">
-        <img src="assets/mujeresdeluz.png" alt="Logo Mujeres de Luz" class="logo" />
+    <!-- Sección superior: dos columnas -->
+    <div class="top-section">
+      <!-- Lado Izquierdo: Logo, texto y botón -->
+      <div class="left-section">
+        <div class="logo-container">
+          <img src="assets/mujeresdeluz.png" alt="Logo Mujeres de Luz" class="logo">
+        </div>
+        <p class="intro-text">
+          Descubre el poder de tu transformación y liderazgo a través de experiencias inspiradoras y herramientas clave.
+          Únete este <strong>24 de mayo</strong> y da el primer paso hacia la vida que mereces.
+          ¡Regístrate ahora y transforma tu futuro!
+        </p>
+        <p class="event-date">24 de Mayo - Evento Virtual</p>
+        <a href="#inscripcion" class="btn-main-cta">Quiero ser parte</a>
       </div>
-      <p class="intro-text">
-        Descubre el poder de tu transformación y liderazgo a través de experiencias inspiradoras y herramientas clave.
-        Únete este <strong>24 de mayo</strong> y da el primer paso hacia la vida que mereces.
-        ¡Regístrate ahora y transforma tu futuro!
-      </p>
+      <!-- Lado Derecho: Imagen de mentores -->
+      <div class="right-section">
+        <img src="assets/HeaderPeople.png" alt="Imagen de Mentores" class="header-image">
+      </div>
     </div>
-
-    <div class="right-section">
-      <img src="assets/HeaderPeople.png" alt="Imagen Header Personas" class="header-image" />
-    </div>
-
-    <!-- Contador dentro del header -->
+    <!-- Contador, centrado debajo de las dos columnas -->
     <div class="countdown-section">
       <div class="countdown-title">
         <span>Dias</span>
@@ -49,10 +53,12 @@
 
   <!-- Sección Empoder-Arte -->
   <section class="empoderarte-section">
+    
     <div class="empoderarte-card">
       <!-- Columna izquierda: Imagen -->
       <div class="card-image">
         <img src="assets/empoderarte_image.png" alt="Imagen Empoder-Arte">
+        
       </div>
       
       <!-- Columna derecha: Información -->
@@ -73,6 +79,7 @@
         </p>
       </div>
     </div>
+    
   </section>
 
   <!-- Sección Mentores: Conoce nuestros mentores -->
@@ -99,15 +106,10 @@
           <!-- Bloque de descripción fuera de la card -->
           <div class="mentor-description-block">
             <h4 class="mentor-subtitle">Maleta de herramientas para la mujer moderna</h4>
-
-            <!-- Texto corto (snippet) visible por defecto -->
             <p class="mentor-snippet">
               Líder de sostenibilidad de Microsoft para América Latina, con una exitosa carrera en telecomunicaciones y tecnología...
             </p>
-            <!-- Botón "Leer más" -->
             <a href="#" class="read-more-btn">Leer más</a>
-
-            <!-- Texto completo, inicialmente oculto (se controla con CSS) -->
             <div class="mentor-full-description">
               <p>
                 Líder de sostenibilidad de Microsoft para América Latina. Con una exitosa carrera en telecomunicaciones 
@@ -116,7 +118,6 @@
                 ha sido miembro independiente de diversas Juntas Directivas y fundadora de Mujeres Tic. 
                 Es reconocida por impulsar el liderazgo femenino y el gobierno corporativo.
               </p>
-              <!-- Botón "Leer menos" -->
               <a href="#" class="read-less-btn">Leer menos</a>
             </div>
           </div>
@@ -188,39 +189,52 @@
       </div>
     </div>
   </section>
-<!-- Sección Inscripción -->
-<section class="inscripcion-section">
-  <div class="inscripcion-container">
-    
-    <!-- Parte Izquierda: Imagen o contenido descriptivo -->
-    <div class="inscripcion-info">
-      <img src="assets/fundacion.png" alt="Imagen de inscripción" />
-      <p>
-        Tu participación ayuda a seguir impulsando
-        programas de empoderamiento para mujeres.
-        Contribuye y asegura tu acceso a este evento
-        transformador por solo $50.000
-       ¡Regístrate ahora y sé parte de Empoder-Arte!
-      </p>
+
+  <!-- Sección Inscripción -->
+  <section class="inscripcion-section">
+    <div class="inscripcion-container">
+      <!-- Parte Izquierda: Imagen o contenido descriptivo -->
+      <div class="inscripcion-info">
+        <img src="assets/fundacion.png" alt="Imagen de inscripción" />
+        <p>
+          Tu participación ayuda a seguir impulsando
+          programas de empoderamiento para mujeres.
+          Contribuye y asegura tu acceso a este evento
+          transformador por solo $50.000
+         ¡Regístrate ahora y sé parte de Empoder-Arte!
+        </p>
+      </div>
+      <!-- Parte Derecha: Formulario de inscripción -->
+      <div class="inscripcion-formulario">
+        <form id="form-inscripcion">
+          <h3>Regístrate Ahora</h3>
+          <input type="text" name="nombre" placeholder="Nombre" required />
+          <input type="text" name="apellido" placeholder="Apellido" required />
+          <input type="text" name="ciudad" placeholder="Ciudad" required />
+          <input type="email" name="correo" placeholder="Correo" required />
+          <input type="tel" name="telefono" placeholder="Teléfono" required />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
     </div>
+  </section>
 
-    <!-- Parte Derecha: Formulario de inscripción -->
-    <div class="inscripcion-formulario">
-      <form id="form-inscripcion">
-        <h3>Regístrate Ahora</h3>
-
-        <input type="text" name="nombre" placeholder="Nombre" required />
-        <input type="text" name="apellido" placeholder="Apellido" required />
-        <input type="text" name="ciudad" placeholder="Ciudad" required />
-        <input type="email" name="correo" placeholder="Correo" required />
-        <input type="tel" name="telefono" placeholder="Teléfono" required />
-        
-        <button type="submit">Enviar</button>
-      </form>
+  <!-- Sección Pago -->
+  <section class="pago-section">
+    <div class="pago-container">
+      <!-- Columna Izquierda: Texto grande -->
+      <div class="pago-texto-grande">
+        <h1>¡Transforma tu Vida!</h1>
+        <p>
+          Realiza tu aporte de <strong>$50.000</strong> y asegura tu acceso a esta experiencia única.
+        </p>
+      </div>
+      <!-- Columna Derecha: Botón de pago grande -->
+      <div class="pago-boton-grande">
+        <a href="#" class="boton-pagar-grande">PAGA AHORA</a>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <script src="script.js"></script>
 </body>
