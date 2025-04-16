@@ -53,14 +53,13 @@
 
   <!-- Sección Empoder-Arte -->
   <section class="empoderarte-section">
-    
     <div class="empoderarte-card">
-      <!-- Columna izquierda: Imagen -->
+      <!-- Columna izquierda: Imagen y botón debajo -->
       <div class="card-image">
         <img src="assets/empoderarte_image.png" alt="Imagen Empoder-Arte">
         
+        <div class="section-cta"></div>
       </div>
-      
       <!-- Columna derecha: Información -->
       <div class="card-info">
         <h2>Empoder-Arte: Ruta hacia el Liderazgo y la Transformación</h2>
@@ -79,7 +78,7 @@
         </p>
       </div>
     </div>
-    
+    <div class="section-cta"></div>
   </section>
 
   <!-- Sección Mentores: Conoce nuestros mentores -->
@@ -87,10 +86,8 @@
     <div class="mentores-container">
       <h2>Conoce nuestros mentores</h2>
       <div class="mentor-rows">
-
         <!-- Mentor 1 -->
         <div class="mentor-block">
-          <!-- Card: Nombre e imagen -->
           <div class="mentor-card">
             <h3>Maria Paula Duque</h3>
             <div class="mentor-image-container">
@@ -102,8 +99,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Bloque de descripción fuera de la card -->
           <div class="mentor-description-block">
             <h4 class="mentor-subtitle">Maleta de herramientas para la mujer moderna</h4>
             <p class="mentor-snippet">
@@ -122,7 +117,6 @@
             </div>
           </div>
         </div>
-        
         <!-- Mentor 2 -->
         <div class="mentor-block">
           <div class="mentor-card">
@@ -153,7 +147,6 @@
             </div>
           </div>
         </div>
-        
         <!-- Mentor 3 -->
         <div class="mentor-block">
           <div class="mentor-card">
@@ -185,13 +178,14 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
+    <!-- Contenedor para el botón reutilizable en esta sección (se mostrará debajo de la imagen) -->
+    <div class="section-cta"></div>
   </section>
 
-  <!-- Sección Inscripción -->
-  <section class="inscripcion-section">
+  <!-- Sección Inscripción (Sin botón reutilizable) -->
+  <section class="inscripcion-section" id="inscripcion">
     <div class="inscripcion-container">
       <!-- Parte Izquierda: Imagen o contenido descriptivo -->
       <div class="inscripcion-info">
@@ -201,7 +195,7 @@
           programas de empoderamiento para mujeres.
           Contribuye y asegura tu acceso a este evento
           transformador por solo $50.000
-         ¡Regístrate ahora y sé parte de Empoder-Arte!
+          ¡Regístrate ahora y sé parte de Empoder-Arte!
         </p>
       </div>
       <!-- Parte Derecha: Formulario de inscripción -->
@@ -219,7 +213,7 @@
     </div>
   </section>
 
-  <!-- Sección Pago -->
+  <!-- Sección Pago (Sin botón reutilizable) -->
   <section class="pago-section">
     <div class="pago-container">
       <!-- Columna Izquierda: Texto grande -->
@@ -235,6 +229,11 @@
       </div>
     </div>
   </section>
+
+  <!-- Template para el botón reutilizable -->
+  <template id="cta-button-template">
+    <a href="#inscripcion" class="btn-main-cta">Quiero ser parte</a>
+  </template>
 
   <script src="script.js"></script>
 </body>

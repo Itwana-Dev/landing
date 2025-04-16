@@ -7,6 +7,11 @@ body {
   font-family: 'Avant Garde', sans-serif;
 }
 
+/* Para desplazamiento suave */
+html {
+  scroll-behavior: smooth;
+}
+
 /* ============================= */
 /* HEADER */
 /* ============================= */
@@ -33,7 +38,7 @@ header {
 .logo-container {
   margin-bottom: 20px;
   display: flex;
-  justify-content: left;
+  justify-content: left; /* Logo a la izquierda */
 }
 
 .logo {
@@ -83,8 +88,7 @@ header {
 }
 
 .header-image {
-  width: 130%;
-    
+  width: 130%; /* Ajusta este valor para aumentar/disminuir el tamaño */
   height: auto;
   transition: transform 0.5s ease;
   cursor: pointer;
@@ -142,31 +146,8 @@ header {
 }
 
 /* ============================= */
-/* Responsividad */
+/* Sección Empoder-Arte */
 /* ============================= */
-@media (max-width: 768px) {
-  .top-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  .left-section,
-  .right-section {
-    flex: 1 1 100%;
-    padding-right: 0;
-    text-align: center;
-  }
-  .intro-text {
-    max-width: 100%;
-  }
-  .countdown-section {
-    margin-top: 20px;
-  }
-}
-
-/***********************************************
- * Sección Empoder-Arte
- ***********************************************/
 .empoderarte-section {
   background: url('assets/empoderarte_background.png') no-repeat center center;
   background-size: cover;
@@ -185,6 +166,7 @@ header {
 
 .card-image {
   flex: 1 1 50%;
+  position: relative;
 }
 
 .card-image img {
@@ -196,6 +178,13 @@ header {
 
 .card-image img:hover {
   /* Sin efecto adicional */
+}
+
+/* Estilo para el contenedor del botón reutilizable en Empoder-Arte,
+   ubicado debajo de la imagen. */
+.section-cta {
+  margin-top: 20px;
+  text-align: center;
 }
 
 .card-info {
@@ -226,12 +215,10 @@ header {
   .empoderarte-card {
     flex-direction: column;
   }
-  
   .card-image,
   .card-info {
     flex: 1 1 100%;
   }
-  
   .card-image img {
     height: auto;
   }
@@ -259,7 +246,6 @@ header {
   letter-spacing: 1px;
 }
 
-/* Contenedor general de mentores */
 .mentor-rows {
   display: flex;
   flex-wrap: wrap;
@@ -268,7 +254,6 @@ header {
   align-items: flex-start;
 }
 
-/* Cada mentor se organiza en un bloque con dos partes: la card y la descripción */
 .mentor-block {
   background-color: #fff;
   border-radius: 10px;
@@ -287,7 +272,6 @@ header {
   transform: translateY(-5px);
 }
 
-/* La card para nombre e imagen */
 .mentor-card {
   padding: 20px;
   text-align: center;
@@ -304,7 +288,6 @@ header {
   color: #730073;
 }
 
-/* Contenedor de imagen y overlay */
 .mentor-image-container {
   position: relative;
   overflow: hidden;
@@ -358,7 +341,6 @@ header {
   text-decoration: none;
 }
 
-/* Bloque de descripción fuera de la card */
 .mentor-description-block {
   background-color: #f7f7f7;
   padding: 20px;
@@ -366,7 +348,6 @@ header {
   height: auto;
 }
 
-/* Estilo para el snippet */
 .mentor-snippet {
   font-family: 'Poppins', sans-serif;
   color: #555;
@@ -390,7 +371,6 @@ header {
   max-height: 500px;
 }
 
-/* Enlaces "Leer más" / "Leer menos" */
 .read-more-btn,
 .read-less-btn {
   display: inline-block;
@@ -406,21 +386,36 @@ header {
   margin-right: 10px;
 }
 
-/* Responsividad Mentores */
+/* ============================= */
+/* Responsividad */
+/* ============================= */
 @media (max-width: 768px) {
-  .mentor-rows {
+  .top-section {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
-  .mentor-block {
-    width: 100%;
-    max-width: 600px;
+  .left-section,
+  .right-section {
+    flex: 1 1 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+  .intro-text {
+    max-width: 100%;
+  }
+  .countdown-section {
+    margin-top: 20px;
   }
 }
 
-/* Sección Inscripción */
-.inscripcion-section {
-  background-color: #FFF6E8;
+/***********************************************
+ * Sección Inscripción
+ ***********************************************/
+ .inscripcion-section {
+  /* Agregamos el background como en empoderarte-section */
+  background: url('assets/background_01.png') no-repeat center center;
+  background-size: cover;
   padding: 60px 20px;
 }
 
@@ -511,9 +506,12 @@ header {
   }
 }
 
-/* Sección Pago */
+/***********************************************
+ * Sección Pago
+ ***********************************************/
 .pago-section {
-  background-color: #FFF6E8;
+  background: url('assets/background_02.png') no-repeat center center;
+  background-size: cover;
   padding: 60px 20px;
 }
 

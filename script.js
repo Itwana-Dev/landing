@@ -35,35 +35,37 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Funcionalidad "Leer más" / "Leer menos" para expandir el texto de cada mentor individualmente
+// Funcionalidad "Leer más" / "Leer menos" para cada mentor
 document.addEventListener("DOMContentLoaded", function () {
   const readMoreButtons = document.querySelectorAll(".read-more-btn");
   const readLessButtons = document.querySelectorAll(".read-less-btn");
 
-  // Expande el contenido de cada tarjeta de mentor de forma independiente
   readMoreButtons.forEach(btn => {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       const descriptionBlock = btn.closest(".mentor-description-block");
-      // Se añade la clase que, mediante CSS, expandirá el bloque y ocultará el snippet
       descriptionBlock.classList.add("expanded");
-      // Se oculta el botón "Leer más"
       btn.style.display = "none";
     });
   });
 
-  // Contrae el contenido de la misma tarjeta
   readLessButtons.forEach(btn => {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       const descriptionBlock = btn.closest(".mentor-description-block");
-      // Se remueve la clase para colapsar el bloque y mostrar el snippet nuevamente
       descriptionBlock.classList.remove("expanded");
-      // Se muestra nuevamente el botón "Leer más"
       const readMore = descriptionBlock.querySelector(".read-more-btn");
       if (readMore) {
         readMore.style.display = "inline-block";
       }
     });
+  });
+
+  // Insertar el botón "Quiero ser parte" en cada contenedor .section-cta
+  const ctaContainers = document.querySelectorAll('.section-cta');
+  const ctaTemplate = document.getElementById('cta-button-template');
+
+  ctaContainers.forEach(container => {
+    container.appendChild(ctaTemplate.content.cloneNode(true));
   });
 });
